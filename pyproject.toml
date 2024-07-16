@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mlserver"
-version = "1.5.0.dev1"
+version = "1.5.1.dev1"
 description = "MLServer"
 authors = ["Seldon Technologies Ltd. <hello@seldon.io>"]
 license = "Apache-2.0"
@@ -73,6 +73,9 @@ opentelemetry-sdk = "^1.22.0"
 opentelemetry-instrumentation-fastapi = ">=0.43b0"
 opentelemetry-instrumentation-grpc = ">=0.43b0"
 opentelemetry-exporter-otlp-proto-grpc = "^1.22.0"
+transformers = ">=4.36.0,<=4.41.2"
+tensorflow = ">=2.11.1"
+pyarrow = ">=14.0.1"
 
 [tool.poetry.group.dev.dependencies]
 datamodel-code-generator = "0.25.4"
