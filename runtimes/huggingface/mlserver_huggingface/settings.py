@@ -2,9 +2,9 @@ import os
 import orjson
 
 from typing import Optional, Dict, Union, NewType
-from pydantic import BaseSettings, Extra
 from distutils.util import strtobool
 from transformers.pipelines import SUPPORTED_TASKS
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 try:
     # Optimum 1.7 changed the import name from `SUPPORTED_TASKS` to
@@ -34,10 +34,7 @@ class HuggingFaceSettings(BaseSettings):
     """
     Parameters that apply only to HuggingFace models
     """
-
-    class Config:
-        env_prefix = ENV_PREFIX_HUGGINGFACE_SETTINGS
-        extra = Extra.ignore
+    model_config = SettingsConfigDict(env_prefix=ENV_PREFIX_HUGGINGFACE_SETTINGS, extra="ignore")
 
     # TODO: Document fields
     task: str = ""

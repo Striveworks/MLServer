@@ -19,12 +19,12 @@
 import sphinx_material
 
 project = "MLServer"
-copyright = "2023, Seldon Technologies"
+copyright = "2024, Seldon Technologies"
 html_title = "MLServer Documentation"
 author = "Seldon Technologies"
 
 # The full version, including alpha/beta/rc tags
-release = "1.5.0.dev1"
+release = "1.6.0.dev2"
 
 
 # -- General configuration ---------------------------------------------------
@@ -83,6 +83,7 @@ if html_theme == "sphinx_material":
         "globaltoc_depth": 4,
         "globaltoc_collapse": True,
         "globaltoc_includehidden": True,
+        "localtoc_label_text": "Contents",
         "repo_type": "github",
         "nav_links": [
             {
