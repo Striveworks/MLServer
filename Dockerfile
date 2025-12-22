@@ -123,6 +123,9 @@ RUN pip install --upgrade certifi tqdm requests urllib3 && pip install --upgrade
 RUN microdnf upgrade -y && microdnf clean all -y
 RUN pip install --upgrade setuptools
 RUN pip install protobuf==4.25.8
+RUN pip install --upgrade transformers==4.53.0 Brotli==1.2.0 keras==3.12.0 starlette==0.49.1 pip 
+RUN pip install xgboost
+RUN pip install Werkzeug==3.1.4
 # RUN microdnf remove -y python3.9 glib2-devel python-unversioned-command python3-setuptools-wheel python3-libs libX11 libX11-common libX11-xcb libXext mesa-libGL libXfixes libglvnd-glx libXxf86vm
 RUN microdnf remove -y python3.9 glib2-devel python-unversioned-command python3-setuptools-wheel python3-libs 
 #libX11 libX11-common libX11-xcb libXext libXfixes libglvnd-glx libXxf86vm

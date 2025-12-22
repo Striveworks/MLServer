@@ -1,0 +1,23 @@
+# Stage 1: Download in full system
+FROM 724664234782.dkr.ecr.us-east-1.amazonaws.com/docker.io/library/rockylinux:9.3.20231119-minimal as builder
+RUN microdnf upgrade -y
+RUN microdnf install -y expat openssl openssl-libs shadow-utils sqlite-libs
+
+FROM 724664234782.dkr.ecr.us-east-1.amazonaws.com/library/hardened/seldonio/mlserver:1.6.1-sklearn-2025-11-25
+
+
+USER 0
+
+# Copy microdnf + its runtime deps
+COPY --from=builder /usr/bin/microdnf /usr/bin/microdnf
+COPY --from=builder /etc/dnf /etc/dnf
+#COPY --from=builder /var/cache/dnf /var/cache/dnf
+#COPY --from=builder /usr/libexec/platform-python /usr/libexec/platform-python
+COPY --from=builder /lib64 /lib64
+COPY --from=builder /usr/lib64 /usr/lib64
+COPY --from=builder /usr/lib /usr/lib
+COPY --from=builder /usr/share /usr/share
+
+
+
+USER 1001
