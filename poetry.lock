@@ -3221,7 +3221,7 @@ xethub = ["mlflow-xethub"]
 
 [[package]]
 name = "mlserver-huggingface"
-version = "2.0.14"
+version = "2.0.16"
 description = "HuggingFace runtime for MLServer"
 optional = false
 python-versions = ">=3.10,<3.12"
