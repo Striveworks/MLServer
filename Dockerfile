@@ -1,4 +1,4 @@
-FROM python:3.10-slim AS wheel-builder
+FROM python:3.11-slim AS wheel-builder
 SHELL ["/bin/bash", "-l", "-c"]
 
 ARG POETRY_VERSION="1.8.3"
@@ -29,7 +29,7 @@ RUN cat opt/mlserver/dist/constraints.txt
 FROM 724664234782.dkr.ecr.us-east-1.amazonaws.com/docker.io/library/rockylinux:9.3.20231119-minimal
 SHELL ["/bin/bash", "-c"]
 
-ARG PYTHON_VERSION=3.10.12
+ARG PYTHON_VERSION=3.11.14
 ARG CONDA_VERSION=23.11.0
 ARG MINIFORGE_VERSION=${CONDA_VERSION}-0
 ARG RUNTIMES="all"
