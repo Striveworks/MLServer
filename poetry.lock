@@ -3206,7 +3206,7 @@ name = "mlserver-huggingface"
 version = "2.1.0"
 description = "HuggingFace runtime for MLServer"
 optional = false
-python-versions = ">=3.10,<3.12"
+python-versions = ">=3.11,<3.12"
 files = []
 develop = true
 
