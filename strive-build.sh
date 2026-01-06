@@ -1,3 +1,7 @@
+pushd runtimes/xgboost
+poetry lock
+popd
+
 pushd runtimes/huggingface
 poetry lock
 popd
