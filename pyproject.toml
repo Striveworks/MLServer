@@ -43,7 +43,7 @@ asyncio_mode = "auto"
 addopts = "--import-mode=importlib"
 
 [tool.poetry.dependencies]
-python = ">=3.9,<3.12"
+python = ">=3.10,<3.12"
 click = "*"
 fastapi = ">=0.88.0,!=0.89.0,<=0.110.0"
 python-dotenv = "*"
@@ -57,6 +57,7 @@ py-grpc-prometheus = "*"
 aiokafka = "*"
 # add a min version to tritonclient due to https://github.com/triton-inference-server/server/issues/6246
 tritonclient = {version = ">=2.42", extras = ["http"]}
+
 geventhttpclient = "*"
 gevent = "*"
 aiofiles = "*"
@@ -68,6 +69,7 @@ python-multipart = "*"
 h11 = "0.16.*"
 werkzeug = "^3.0.6"
 keras = "3.*"
+filelock = "3.20.1"
 
 ## The importlib-resources backport is required to use some
 ## functionality added in Python 3.10

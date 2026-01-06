@@ -22,7 +22,9 @@ RUN pip install poetry==$POETRY_VERSION && \
         --without-hashes \
         --format constraints.txt \
         -o /opt/mlserver/dist/constraints.txt && \
-    sed -i 's/\[.*\]//g' /opt/mlserver/dist/constraints.txt
+    sed -i 's/\[.*\]//g' /opt/mlserver/dist/constraints.txt && \
+    sed -i 's/perf-analyzer==2.59.1/perf-analyzer/g' /opt/mlserver/dist/constraints.txt
+RUN cat opt/mlserver/dist/constraints.txt 
 
 FROM 724664234782.dkr.ecr.us-east-1.amazonaws.com/docker.io/library/rockylinux:9.3.20231119-minimal
 SHELL ["/bin/bash", "-c"]
@@ -126,6 +128,7 @@ RUN pip install protobuf==4.25.8
 RUN pip install --upgrade transformers==4.53.0 Brotli==1.2.0 keras==3.12.0 starlette==0.49.1 pip 
 RUN pip install xgboost
 RUN pip install Werkzeug==3.1.4
+RUN pip install filelock==3.20.1
 # RUN microdnf remove -y python3.9 glib2-devel python-unversioned-command python3-setuptools-wheel python3-libs libX11 libX11-common libX11-xcb libXext mesa-libGL libXfixes libglvnd-glx libXxf86vm
 RUN microdnf remove -y python3.9 glib2-devel python-unversioned-command python3-setuptools-wheel python3-libs 
 #libX11 libX11-common libX11-xcb libXext libXfixes libglvnd-glx libXxf86vm
