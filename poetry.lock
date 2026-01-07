@@ -3241,6 +3241,7 @@ h11 = "0.16.*"
 joblib = "1.4.2"
 keras = "3.*"
 mlserver = "1.6.1"
+pydantic = "2.11.7"
 scikit-learn = "1.8.0"
 transformers = "4.52.1"
 werkzeug = "3.*"
@@ -6587,13 +6588,13 @@ files = [
 
 [[package]]
 name = "timm"
-version = "1.0.23"
+version = "1.0.24"
 description = "PyTorch Image Models"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "timm-1.0.23-py3-none-any.whl", hash = "sha256:8b351810c714ede9a3c2f0fd9845c5d312548cc4397967ffd49334e9cbc8e165"},
-    {file = "timm-1.0.23.tar.gz", hash = "sha256:32e8e678212746d493a57438071c34f10b433f0c8167285bfd9d7607238d9d35"},
+    {file = "timm-1.0.24-py3-none-any.whl", hash = "sha256:8301ac783410c6ad72c73c49326af6d71a9e4d1558238552796e825c2464913f"},
+    {file = "timm-1.0.24.tar.gz", hash = "sha256:c7b909f43fe2ef8fe62c505e270cd4f1af230dfbc37f2ee93e3608492b9d9a40"},
 ]
 
 [package.dependencies]

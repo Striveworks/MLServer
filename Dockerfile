@@ -5,7 +5,8 @@ ARG POETRY_VERSION="1.8.3"
 
 COPY ./hack/build-wheels.sh ./hack/build-wheels.sh
 COPY ./mlserver ./mlserver
-COPY ./runtimes ./runtimes
+COPY ./runtimes/huggingface ./runtimes/huggingface
+COPY ./runtimes/sklearn ./runtimes/sklearn
 COPY \
     pyproject.toml \
     poetry.lock \
